@@ -23,3 +23,48 @@ function printKata (kataNumber, object) {
     const stringifiedObject = JSON.stringify(object)
     detailsElement.append(stringifiedObject)
 }
+
+const greenEyes1 = users.filter(user => user.eyeColor === "green")
+// OR...
+const greenEyes2 = users.filter(function (user) {
+    return user.eyeColor === "green"
+})
+printKata(0, greenEyes1)   // If you don't have this function already, see the "Set up" section above.
+
+
+// Kata 1: Use the .filter() method
+const activeUsers = users.filter(user => user.isActive)
+printKata(1, activeUsers)
+
+
+
+
+// Kata 2: Use the .map() method
+const email = users.map (user => user.email)
+printKata(2, email)
+
+
+// Kata 3: Use the .some() method
+const ovationCheck =users.some (user => user.ovationCheck)
+printKata(3, ovationCheck)
+
+
+// Kata 4: Use the .find() method
+const userOver30 = users.find(user => user.age > 38)
+printKata(4, userOver30)
+
+
+// Kata 5: Use the .filter() and .find() methods
+const activeOver30 = users
+    .filter(user => user.isActive)
+    .find(user => user.age > 38)
+printKata()
+
+
+// Kata 6: Use the .filter() and .map() methods
+printKata()
+//     Show the balance of every user in the array from the "ZENCO" company.
+
+// Kata 7: Use the .filter() method with .includes() and the .map() method
+printKata()
+//     Show the age of every user with the "fugiat" tag.
