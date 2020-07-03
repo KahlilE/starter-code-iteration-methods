@@ -9,7 +9,7 @@ console.log(users)
 const main = document.querySelector('main')
 
 
-function printKata (kataNumber, object) {
+function printKata(kataNumber, object) {
     // For the usage of the DETAILS and SUMMARY tags
     // in HTML, see: http://mdn.io/details-element
     const detailsElement = document.createElement('details')
@@ -40,12 +40,12 @@ printKata(1, activeUsers)
 
 
 // Kata 2: Use the .map() method
-const email = users.map (user => user.email)
+const email = users.map(user => user.email)
 printKata(2, email)
 
 
 // Kata 3: Use the .some() method
-const ovationCheck =users.some (user => user.ovationCheck)
+const ovationCheck = users.some(user => user.ovationCheck)
 printKata(3, ovationCheck)
 
 
@@ -58,13 +58,22 @@ printKata(4, userOver30)
 const activeOver30 = users
     .filter(user => user.isActive)
     .find(user => user.age > 38)
-printKata()
+printKata(5, activeUsers)
 
 
 // Kata 6: Use the .filter() and .map() methods
-printKata()
+
+const zencoBalance = users
+    .filter(user => user.company === 'ZENCO')
+    .map(user => user.balance)
+printKata(6, zencoBalance)
+
+
 //     Show the balance of every user in the array from the "ZENCO" company.
 
 // Kata 7: Use the .filter() method with .includes() and the .map() method
-printKata()
-//     Show the age of every user with the "fugiat" tag.
+const fugiatAge = users
+    .filter(user => user.tags.includes('fugiat'))
+    .map(user => user.age)
+printKata(7, fugiatAge)
+
